@@ -152,6 +152,17 @@ nav.scrolled { border-bottom-color:var(--border); }
 .corp-logo { opacity:0.45; transition:opacity 0.3s ease; filter:grayscale(100%); }
 .corp-logo:hover { opacity:0.8; }
 .tl-title .corp-logo { height:14px !important; margin-left:6px; vertical-align:middle; opacity:0.5; }
+
+/* EVENT PHOTO CARDS */
+.event-card { border-radius:14px; overflow:hidden; position:relative; background:var(--bg-warm); }
+.event-photo { width:100%; aspect-ratio:4/3; background:var(--bg-warm); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.3rem; color:var(--text-muted); font-size:0.75rem; }
+.event-photo .cam-icon { font-size:1.8rem; opacity:0.3; }
+.event-photo .cam-label { font-size:0.72rem; font-weight:500; }
+.event-photo .cam-hint { font-size:0.65rem; opacity:0.6; }
+.event-photo img { width:100%; height:100%; object-fit:cover; }
+.event-overlay { position:absolute; bottom:0; left:0; right:0; padding:1rem 1.25rem; background:linear-gradient(transparent, rgba(26,26,46,0.85)); color:white; }
+.event-overlay h4 { font-size:0.92rem; font-weight:700; }
+.event-overlay p { font-size:0.72rem; opacity:0.8; margin-top:0.15rem; }
 </style>
 </head>
 <body>
@@ -346,6 +357,29 @@ nav.scrolled { border-bottom-color:var(--border); }
       </tbody>
     </table>
     <p class="reveal" style="font-size:0.88rem;color:var(--text-sec);margin-top:1.5rem;line-height:1.7;">Both program types serve the ecosystem. Go through foundational training first. Enter SELL GLOBAL when you're ready to face international buyers.</p>
+  </div>
+
+  <!-- EVENT PHOTOS -->
+  <div class="section-sm">
+    <div class="g4 reveal">
+      <div class="event-card">
+        <div class="event-photo" style="aspect-ratio:5/4;"><span class="cam-icon">📷</span><span class="cam-label">CES Bootcamp</span></div>
+        <div class="event-overlay"><h4>CES 2025 Bootcamp</h4></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo" style="aspect-ratio:5/4;"><span class="cam-icon">📷</span><span class="cam-label">VivaTech Workshop</span></div>
+        <div class="event-overlay"><h4>VivaTech 2025</h4></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo" style="aspect-ratio:5/4;"><span class="cam-icon">📷</span><span class="cam-label">War Games Day</span></div>
+        <div class="event-overlay"><h4>War Games Simulation</h4></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo" style="aspect-ratio:5/4;"><span class="cam-icon">📷</span><span class="cam-label">Mentor Role-Play</span></div>
+        <div class="event-overlay"><h4>Mentor Sessions</h4></div>
+      </div>
+    </div>
+    <p class="reveal" style="font-size:0.72rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;">↑ Drop in your event photos. Recommended: 800×600px or larger, 4:3 aspect ratio.</p>
   </div>
 
   <!-- CTA -->
@@ -707,6 +741,38 @@ nav.scrolled { border-bottom-color:var(--border); }
           <div class="tl-title">SELL GLOBAL</div>
           <div class="tl-desc">Everything we've learned, distilled into a structured 8-week program. The first cross-cultural sales training designed specifically for Taiwanese technology startups.</div>
         </div>
+      </div>
+    </div>
+
+    <!-- EVENT PHOTOS -->
+    <div class="reveal" style="margin-top:4rem;">
+      <div class="section-label">In Action</div>
+      <h2 class="section-heading">From the training floor.</h2>
+    </div>
+    <div class="g3 reveal" style="margin-top:2rem;">
+      <div class="event-card">
+        <div class="event-photo"><span class="cam-icon">📷</span><span class="cam-label">CES 2025 Bootcamp</span><span class="cam-hint">Insert: training session photo</span></div>
+        <div class="event-overlay"><h4>CES 2025 Bootcamp</h4><p>2-day intensive at TTA, Taipei · 2024</p></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo"><span class="cam-icon">📷</span><span class="cam-label">VivaTech 2025 Prep</span><span class="cam-hint">Insert: workshop photo</span></div>
+        <div class="event-overlay"><h4>VivaTech 2025 Workshop</h4><p>4-rotation bootcamp · 30 startups · 2025</p></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo"><span class="cam-icon">📷</span><span class="cam-label">CES 2026 War Games</span><span class="cam-hint">Insert: simulation photo</span></div>
+        <div class="event-overlay"><h4>CES 2026 War Games</h4><p>Competitive simulation day · 2025</p></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo"><span class="cam-icon">📷</span><span class="cam-label">Mentor Role-Play Session</span><span class="cam-hint">Insert: role-play photo</span></div>
+        <div class="event-overlay"><h4>Mentor Role-Play</h4><p>Adversarial buyer personas · TTA</p></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo"><span class="cam-icon">📷</span><span class="cam-label">Startup Pitch Practice</span><span class="cam-hint">Insert: pitch practice photo</span></div>
+        <div class="event-overlay"><h4>Pitch Under Pressure</h4><p>Materials clinic · Round Robin format</p></div>
+      </div>
+      <div class="event-card">
+        <div class="event-photo"><span class="cam-icon">📷</span><span class="cam-label">Taiwan Tech Arena</span><span class="cam-hint">Insert: TTA venue photo</span></div>
+        <div class="event-overlay"><h4>Taiwan Tech Arena</h4><p>Home base · Taipei</p></div>
       </div>
     </div>
 
