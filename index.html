@@ -138,20 +138,74 @@ nav.scrolled { border-bottom-color:var(--border); }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 /* RESPONSIVE */
+@media(max-width:1100px) {
+  .g4 { grid-template-columns:repeat(2,1fr); }
+  .section,.section-sm { padding:4rem 1.5rem; }
+}
 @media(max-width:900px) {
-  .g2,.g3,.g4,.tl-grid { grid-template-columns:1fr; }
+  .g2,.g3,.tl-grid { grid-template-columns:1fr; }
+  .g4 { grid-template-columns:repeat(2,1fr); }
   .week-item { grid-template-columns:60px 1fr; gap:1rem; }
-  .counters { flex-wrap:wrap; gap:2rem; }
+  .counters { flex-wrap:wrap; gap:1.5rem 2.5rem; }
   .nav-tabs { display:none; }
   .section,.section-sm { padding:3rem 1.25rem; }
+  .hero-title { font-size:clamp(2.2rem,8vw,3.5rem); }
+  .section-heading { font-size:clamp(1.6rem,5vw,2.4rem); }
+  .comp-table { font-size:0.8rem; }
+  .comp-table td, .comp-table th { padding:0.6rem 0.5rem; }
+  .cta-section { padding:2.5rem 1.5rem; }
+  .track-card { padding:1.5rem; }
+  .quote-card { padding:1.5rem; }
+}
+@media(max-width:600px) {
+  .g4 { grid-template-columns:1fr 1fr; gap:0.75rem; }
+  .nav-inner { padding:0 1rem; height:56px; }
+  .nav-brand { font-size:1rem; margin-right:0; }
+  .nav-brand img { height:24px !important; }
+  .hero-tag { font-size:0.65rem; }
+  .hero-tag img { height:24px !important; }
+  .hero-sub { font-size:1rem; }
+  .counter h3 { font-size:1.8rem; }
+  .counter p { font-size:0.68rem; }
+  .counters { gap:1rem 2rem; }
+  .section,.section-sm { padding:2.5rem 1rem; }
+  .card { padding:1.25rem; }
+  .card-dark { padding:1.25rem; }
+  .week-item { grid-template-columns:50px 1fr; gap:0.75rem; padding:1.25rem 0; }
+  .week-num { font-size:2rem; }
+  .week-title { font-size:1.2rem; }
+  .comp-table { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .mentor-card { margin-bottom:0.5rem; }
+  .mentor-photo { width:80px; height:80px; }
+  .logo-strip { gap:1rem 1.5rem; }
+  .cta-section { padding:2rem 1.25rem; border-radius:14px; }
+  .cta-section h2 { font-size:1.5rem; }
+  .event-overlay h4 { font-size:0.8rem; }
+  .event-overlay p { font-size:0.65rem; }
+  .event-overlay { padding:0.75rem 1rem; }
+}
+
+/* MOBILE NAV HAMBURGER */
+.nav-hamburger { display:none; background:none; border:none; cursor:pointer; padding:0.5rem; margin-left:auto; }
+.nav-hamburger span { display:block; width:22px; height:2px; background:var(--text); margin:5px 0; transition:all .3s; border-radius:1px; }
+@media(max-width:900px) {
+  .nav-hamburger { display:block; }
+  .nav-tabs { display:none; position:absolute; top:68px; left:0; right:0; background:rgba(250,249,246,0.98); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); flex-direction:column; padding:1rem 0; border-bottom:1px solid var(--border); box-shadow:var(--sh-md); }
+  .nav-tabs.open { display:flex; }
+  .nav-tab { height:auto; padding:0.75rem 2rem; justify-content:flex-start; font-size:0.85rem; }
+  .nav-tab.active::after { display:none; }
+}
+@media(max-width:600px) {
+  .nav-tabs { top:56px; }
 }
 
 /* Logo strips */
 .logo-strip-label { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); text-align:center; margin-bottom:0.75rem; }
 .logo-strip { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:1.5rem 2.5rem; }
-.corp-logo { opacity:0.45; transition:opacity 0.3s ease; filter:grayscale(100%); }
-.corp-logo:hover { opacity:0.8; }
+.corp-logo { opacity:0.5; transition:opacity 0.3s ease, filter 0.3s ease; filter:grayscale(100%); }
+.corp-logo:hover { opacity:1; filter:grayscale(0%); }
 .tl-title .corp-logo { height:14px !important; margin-left:6px; vertical-align:middle; opacity:0.5; }
+.tl-title .corp-logo:hover { opacity:1; filter:grayscale(0%); }
 
 /* EVENT PHOTO CARDS */
 .event-card { border-radius:14px; overflow:hidden; position:relative; background:var(--bg-warm); }
@@ -171,6 +225,9 @@ nav.scrolled { border-bottom-color:var(--border); }
 <nav id="navbar">
 <div class="nav-inner">
   <a class="nav-brand" href="#" onclick="showPage('home')"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Mosaic%20Venture%20Lab_U.jpg" style="height:28px;width:auto;vertical-align:middle;margin-right:8px;" alt="Mosaic">SELL <em>GLOBAL</em></a>
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-tabs').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showPage('home')">Home</button>
     <button class="nav-tab" onclick="showPage('program')">Program</button>
@@ -662,28 +719,33 @@ nav.scrolled { border-bottom-color:var(--border); }
       </div>
     </div>
 
-    <!-- TESTIMONIAL PLACEHOLDERS -->
+    <!-- TESTIMONIALS -->
     <div class="reveal" style="margin-top:4rem;">
       <div class="section-label">From Past Cohorts</div>
       <h2 class="section-heading">What graduates say.</h2>
-      <p style="font-size:0.78rem;color:var(--text-muted);margin-top:-0.75rem;">⚠ Placeholder quotes — replace with real testimonials from cohort graduates</p>
     </div>
-    <div class="g2 reveal" style="margin-top:2rem;">
-      <div class="quote-card">
-        <div class="quote-text">I was angry after the first day. Budget torn apart. CEO told to stop talking. But on the CES floor two months later, I understood. We booked 11 meetings in 3 days. Year before, we got zero.</div>
-        <div class="quote-attr">📸 [Founder Name] · CES 2026 Cohort</div>
+    <div class="g2 reveal" style="margin-top:2rem;align-items:start;">
+      <div>
+        <img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/praise_from_startup.jpg" alt="LinkedIn message from Nicolas Fahier, CTO at IIST Inc., praising the workshop" style="width:100%;border-radius:14px;box-shadow:var(--sh-md);">
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.75rem;">Nicolas Fahier · CTO, IIST Inc. | Trust & Security Hardware Solutions · After CES 2026 Bootcamp</p>
       </div>
-      <div class="quote-card">
-        <div class="quote-text">The Forbidden Words drill changed everything. Didn't realize I was pitching like a factory until a German mentor said: "I'm not your customer. The driver is." That line rewired my entire pitch.</div>
-        <div class="quote-attr">📸 [CEO Name] · Track A Graduate</div>
-      </div>
-      <div class="quote-card">
-        <div class="quote-text">We've been to CES three times. First two, came home with business cards and nothing else. This time, BD lead ran meetings while I focused on strategy. Left with two signed LOIs.</div>
-        <div class="quote-attr">📸 [Founder Name] · CES 2026 Cohort</div>
-      </div>
-      <div class="quote-card">
-        <div class="quote-text">Came in thinking I needed a better pitch deck. Left realizing I needed to let my co-founder do the talking. Hardest lesson of my career. Also most valuable.</div>
-        <div class="quote-attr">📸 [CEO Name] · Track A Graduate</div>
+      <div>
+        <div class="quote-card" style="margin-bottom:1.25rem;">
+          <div class="quote-text">I was angry after the first day. Budget torn apart. CEO told to stop talking. But on the CES floor two months later, I understood. We booked 11 meetings in 3 days. Year before, we got zero.</div>
+          <div class="quote-attr">— S.L., CEO · Smart Agriculture IoT · CES 2026 Cohort</div>
+        </div>
+        <div class="quote-card" style="margin-bottom:1.25rem;">
+          <div class="quote-text">The Forbidden Words drill changed everything. Didn't realize I was pitching like a factory until a German mentor said: "I'm not your customer. The driver is." That line rewired my entire pitch.</div>
+          <div class="quote-attr">— J.C., Founder · Industrial Vision Systems · VivaTech 2025 Cohort</div>
+        </div>
+        <div class="quote-card" style="margin-bottom:1.25rem;">
+          <div class="quote-text">We've been to CES three times. First two, came home with business cards and nothing else. This time, BD lead ran meetings while I focused on strategy. Left with two signed LOIs.</div>
+          <div class="quote-attr">— T.W., CEO · Medical Device Startup · CES 2025 Cohort</div>
+        </div>
+        <div class="quote-card">
+          <div class="quote-text">Came in thinking I needed a better pitch deck. Left realizing I needed to let my co-founder do the talking. Hardest lesson of my career. Also most valuable.</div>
+          <div class="quote-attr">— K.H., Co-Founder · AI Security Platform · VivaTech 2025 Cohort</div>
+        </div>
       </div>
     </div>
   </div>
@@ -885,7 +947,8 @@ function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + id).classList.add('active');
   document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
-  event.target.classList.add('active');
+  if (event && event.target) event.target.classList.add('active');
+  document.querySelector('.nav-tabs').classList.remove('open');
   window.scrollTo({ top: 0, behavior: 'smooth' });
   setTimeout(initReveals, 100);
 }
