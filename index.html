@@ -219,6 +219,27 @@ nav.scrolled { border-bottom-color:var(--border); }
 .event-overlay { position:absolute; bottom:0; left:0; right:0; padding:1rem 1.25rem; background:linear-gradient(transparent, rgba(26,26,46,0.85)); color:white; }
 .event-overlay h4 { font-size:0.92rem; font-weight:700; }
 .event-overlay p { font-size:0.72rem; opacity:0.8; margin-top:0.15rem; }
+/* VISUAL ENHANCEMENTS */
+.accent-strip { height:4px; background:linear-gradient(90deg, var(--red), var(--blue), var(--teal)); border-radius:2px; margin:3rem 0; opacity:0.3; }
+.pattern-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:1.5rem; margin-bottom:1rem; }
+.stat-card { background:var(--bg-dark); color:white; border-radius:16px; padding:1.5rem; text-align:center; }
+.stat-card h3 { font-family:'DM Serif Display',serif; font-size:2.8rem; letter-spacing:-0.02em; line-height:1; }
+.stat-card p { font-size:0.72rem; font-weight:500; text-transform:uppercase; letter-spacing:0.06em; margin-top:0.4rem; opacity:0.7; }
+.stat-card.red { background:var(--red); }
+.how-card { background:white; border:1px solid var(--border); border-radius:14px; padding:2rem; position:relative; overflow:hidden; transition:box-shadow .3s, transform .3s; }
+.how-card:hover { box-shadow:var(--sh-md); transform:translateY(-2px); }
+.how-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; }
+.how-card.hc-red::before { background:var(--red); }
+.how-card.hc-blue::before { background:var(--blue); }
+.how-card.hc-teal::before { background:var(--teal); }
+.topic-card { background:white; border:1px solid var(--border); border-radius:14px; padding:2rem; position:relative; overflow:hidden; transition:box-shadow .3s, transform .3s; }
+.topic-card:hover { box-shadow:var(--sh-md); transform:translateY(-2px); }
+.topic-badge { display:inline-block; font-family:'IBM Plex Mono',monospace; font-size:0.62rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:0.25rem 0.6rem; border-radius:4px; margin-bottom:0.75rem; }
+.full-accent { background:var(--bg-dark); color:white; position:relative; overflow:hidden; }
+.full-accent::before { content:''; position:absolute; top:-50%; right:-20%; width:400px; height:400px; background:radial-gradient(circle, rgba(220,38,38,0.15) 0%, transparent 70%); pointer-events:none; }
+.comp-table tr:nth-child(even) td { background:rgba(0,0,0,0.015); }
+.infographic-frame { border-radius:16px; overflow:hidden; box-shadow:var(--sh-lg); border:1px solid var(--border); }
+.infographic-frame img { width:100%; display:block; }
 </style>
 </head>
 <body>
@@ -251,11 +272,11 @@ nav.scrolled { border-bottom-color:var(--border); }
       <div class="hero-tag"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Mosaic%20Venture%20Lab_U.jpg" style="height:32px;width:auto;vertical-align:middle;margin-right:8px;" alt="Mosaic">Mosaic Venture Lab × Taiwan Tech Arena</div>
       <h1 class="hero-title">Your tech works.<br>Now learn to <em>sell it.</em></h1>
       <p class="hero-sub">8 weeks that teach Taiwanese startups and SMEs to sell the way European and American buyers actually buy. AI-native sales pipelines. Cross-cultural buyer psychology. Competitive simulation. B2B and B2C tracks.</p>
-      <div class="counters">
-        <div class="counter"><h3>180+</h3><p>Startups Trained</p></div>
-        <div class="counter"><h3>15+</h3><p>International Mentors</p></div>
-        <div class="counter"><h3>3</h3><p>Cohorts Completed</p></div>
-        <div class="counter"><h3>14</h3><p>Years in Taiwan</p></div>
+      <div class="g4 reveal" style="margin-top:2.5rem;">
+        <div class="stat-card"><h3>180+</h3><p>Startups Trained</p></div>
+        <div class="stat-card red"><h3>15+</h3><p>International Mentors</p></div>
+        <div class="stat-card"><h3>3</h3><p>Cohorts Completed</p></div>
+        <div class="stat-card"><h3>14</h3><p>Years in Taiwan</p></div>
       </div>
 
       <!-- MENTOR COMPANY LOGOS -->
@@ -287,21 +308,31 @@ nav.scrolled { border-bottom-color:var(--border); }
         <p class="section-sub">After training 180+ startups for CES and VivaTech, three patterns kept repeating.</p>
       </div>
       <div class="g3 reveal" style="margin-top:2.5rem;">
-        <div class="card">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;color:var(--red);margin-bottom:0.75rem;">PATTERN 1</div>
+        <div class="card" style="border-top:4px solid var(--red);">
+          <div class="pattern-icon" style="background:var(--red-light);color:var(--red);">⚙️</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;color:var(--red);margin-bottom:0.5rem;">PATTERN 1</div>
           <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">The Supplier Trap</h3>
           <p style="font-size:0.88rem;color:var(--text-sec);line-height:1.6;">Founders lead with factory credentials — yield rate, BOM, ODM — instead of the problem they solve. A mentor scored one startup's competitive positioning 1 out of 5: "Less tech jargon, more business language."</p>
         </div>
-        <div class="card">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;color:var(--red);margin-bottom:0.75rem;">PATTERN 2</div>
+        <div class="card" style="border-top:4px solid var(--amber);">
+          <div class="pattern-icon" style="background:#FEF3C7;color:var(--amber);">💰</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;color:var(--amber);margin-bottom:0.5rem;">PATTERN 2</div>
           <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">The Budget Gap</h3>
           <p style="font-size:0.88rem;color:var(--text-sec);line-height:1.6;">A real CES 2026 startup offered $200/day for booth staff — no flight from Taiwan, no hotel. This signals to every potential partner that the company doesn't understand global operating costs.</p>
         </div>
-        <div class="card">
-          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;color:var(--red);margin-bottom:0.75rem;">PATTERN 3</div>
+        <div class="card" style="border-top:4px solid var(--blue);">
+          <div class="pattern-icon" style="background:var(--blue-light);color:var(--blue);">🗣️</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.08em;color:var(--blue);margin-bottom:0.5rem;">PATTERN 3</div>
           <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;">The Communication Mismatch</h3>
           <p style="font-size:0.88rem;color:var(--text-sec);line-height:1.6;">The CEO pitches in limited English while a fluent team member watches silently. Another mentor's entire feedback for a startup: "Good tech with terrible storytelling." Scored 1 out of 5.</p>
         </div>
+      </div>
+      <!-- INFOGRAPHIC -->
+      <div class="reveal" style="margin-top:3rem;">
+        <div class="infographic-frame">
+          <img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Infographic_Dash_problem_in_Taiwans_startup_ecosystem.png" alt="The Taiwan Startup Short-Circuit — infographic showing systemic failure patterns">
+        </div>
+        <p style="font-size:0.68rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;font-style:italic;">The systemic patterns behind why strong Taiwanese technology struggles in global markets.</p>
       </div>
     </div>
   </div>
@@ -354,17 +385,17 @@ nav.scrolled { border-bottom-color:var(--border); }
         <h2 class="section-heading">8 weeks. 4 online. 4 in-person.<br>Send the right people to the right sessions.</h2>
       </div>
       <div class="g3 reveal" style="margin-top:2.5rem;">
-        <div class="card">
+        <div class="how-card hc-red">
           <div style="font-size:2rem;margin-bottom:0.75rem;">🎯</div>
           <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Learn How Buyers Buy</h3>
           <p style="font-size:0.85rem;color:var(--text-sec);line-height:1.6;">European and American buyers evaluate trust, make decisions, and communicate differently. Two dedicated online sessions cover each market's norms with live role-play demos.</p>
         </div>
-        <div class="card">
+        <div class="how-card hc-blue">
           <div style="font-size:2rem;margin-bottom:0.75rem;">🎭</div>
           <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Role-Play Is the Core</h3>
           <p style="font-size:0.85rem;color:var(--text-sec);line-height:1.6;">40% of program time is mentor-vs-founder role-play. A mentor plays a skeptical German buyer. You pitch. They push back. You adapt. That's how the learning sticks.</p>
         </div>
-        <div class="card">
+        <div class="how-card hc-teal">
           <div style="font-size:2rem;margin-bottom:0.75rem;">👥</div>
           <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.4rem;">Send Your Whole Team</h3>
           <p style="font-size:0.85rem;color:var(--text-sec);line-height:1.6;">Your BD lead attends lead generation training. Your engineer joins the technical session. Your CEO comes to strategy day. One enrollment, multiple team members at relevant sessions.</p>
@@ -374,30 +405,36 @@ nav.scrolled { border-bottom-color:var(--border); }
   </div>
 
   <!-- THREE HOT TOPICS -->
-  <div class="section">
-    <div class="reveal">
-      <div class="section-label">New for 2026</div>
-      <h2 class="section-heading">Three topics Taiwan's startups<br>are asking for right now.</h2>
-      <p class="section-sub">Added to the curriculum based on direct feedback from founders and TTA stakeholders.</p>
-    </div>
-    <div class="g3 reveal" style="margin-top:2rem;">
-      <div class="card" style="border-left:3px solid var(--red);">
-        <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">AI-Powered Founder-Led Sales</h4>
-        <p style="font-size:0.85rem;line-height:1.7;color:var(--text-sec);">Browser agents as your AI SDR. Automated outbound pipelines from lead sourcing through enrichment to sequenced outreach. Tools like Clay, Instantly, and Claude Cowork — the same stack a16z speedrun founders are using to sell to banks and hospitals with zero sales hires. You build your pipeline in-session.</p>
+  <div class="full-accent">
+    <div class="section">
+      <div class="reveal">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--red);margin-bottom:1rem;">New for 2026</div>
+        <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);line-height:1.15;letter-spacing:-0.01em;margin-bottom:1.5rem;">Three topics Taiwan's startups<br>are asking for right now.</h2>
+        <p style="font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,0.65);max-width:640px;">Added to the curriculum based on direct feedback from founders and TTA stakeholders.</p>
       </div>
-      <div class="card" style="border-left:3px solid var(--red);">
-        <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">Vibe Coding for Sales Tools</h4>
-        <p style="font-size:0.85rem;line-height:1.7;color:var(--text-sec);">Build landing pages, lead-capture forms, ROI calculators, and custom GTM dashboards — no engineers. Founders prototype sales tools in-session and ship them the same week. The sales enablement that used to require a 3-month dev cycle now takes an afternoon.</p>
-      </div>
-      <div class="card" style="border-left:3px solid var(--red);">
-        <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">Business English for Deals</h4>
-        <p style="font-size:0.85rem;line-height:1.7;color:var(--text-sec);">Meeting language, negotiation phrases, and the cultural signals that close or kill a deal. Role-play practice with native-speaking mentors across American, German, and French buyer personas.</p>
+      <div class="g3 reveal" style="margin-top:2rem;">
+        <div class="topic-card">
+          <div class="topic-badge" style="background:var(--red-light);color:var(--red);">🤖 AI-Native</div>
+          <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">AI-Powered Founder-Led Sales</h4>
+          <p style="font-size:0.85rem;line-height:1.7;color:var(--text-sec);">Browser agents as your AI SDR. Automated outbound pipelines from lead sourcing through enrichment to sequenced outreach. Tools like Clay, Instantly, and Claude Cowork — the same stack a16z speedrun founders are using to sell to banks and hospitals with zero sales hires. You build your pipeline in-session.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-badge" style="background:var(--blue-light);color:var(--blue);">⚡ Build Fast</div>
+          <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">Vibe Coding for Sales Tools</h4>
+          <p style="font-size:0.85rem;line-height:1.7;color:var(--text-sec);">Build landing pages, lead-capture forms, ROI calculators, and custom GTM dashboards — no engineers. Founders prototype sales tools in-session and ship them the same week. The sales enablement that used to require a 3-month dev cycle now takes an afternoon.</p>
+        </div>
+        <div class="topic-card">
+          <div class="topic-badge" style="background:#ECFDF5;color:var(--teal);">🌍 Cross-Cultural</div>
+          <h4 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">Business English for Deals</h4>
+          <p style="font-size:0.85rem;line-height:1.7;color:var(--text-sec);">Meeting language, negotiation phrases, and the cultural signals that close or kill a deal. Role-play practice with native-speaking mentors across American, German, and French buyer personas.</p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- POSITIONING -->
   <div class="section">
+    <div class="accent-strip"></div>
     <div class="reveal">
       <div class="section-label">How This Is Different</div>
       <h2 class="section-heading">Existing programs teach you<br>how to build a startup.<br>We teach you how to sell one.</h2>
