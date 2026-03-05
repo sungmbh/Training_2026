@@ -145,6 +145,7 @@ nav.scrolled { border-bottom-color:var(--border); }
 @media(max-width:900px) {
   .g2,.g3,.tl-grid { grid-template-columns:1fr; }
   .g4 { grid-template-columns:repeat(2,1fr); }
+  .mentor-grid { grid-template-columns:repeat(3,1fr) !important; }
   .week-item { grid-template-columns:60px 1fr; gap:1rem; }
   .counters { flex-wrap:wrap; gap:1.5rem 2.5rem; }
   .nav-tabs { display:none; }
@@ -177,6 +178,7 @@ nav.scrolled { border-bottom-color:var(--border); }
   .comp-table { display:block; overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .mentor-card { margin-bottom:0.5rem; }
   .mentor-photo { width:80px; height:80px; }
+  .mentor-grid { grid-template-columns:repeat(2,1fr) !important; gap:0.75rem !important; }
   .logo-strip { gap:1rem 1.5rem; }
   .cta-section { padding:2rem 1.25rem; border-radius:14px; }
   .cta-section h2 { font-size:1.5rem; }
@@ -726,7 +728,7 @@ nav.scrolled { border-bottom-color:var(--border); }
     </div>
     <div class="g2 reveal" style="margin-top:2rem;align-items:start;">
       <div>
-        <img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/praise_from_startup.jpg" alt="LinkedIn message from Nicolas Fahier, CTO at IIST Inc., praising the workshop" style="width:100%;border-radius:14px;box-shadow:var(--sh-md);">
+        <img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/praise%20from%20startup.jpg" alt="LinkedIn message from Nicolas Fahier, CTO at IIST Inc., praising the workshop" style="width:100%;border-radius:14px;box-shadow:var(--sh-md);">
         <p style="font-size:0.72rem;color:var(--text-muted);margin-top:0.75rem;">Nicolas Fahier · CTO, IIST Inc. | Trust & Security Hardware Solutions · After CES 2026 Bootcamp</p>
       </div>
       <div>
@@ -884,18 +886,18 @@ nav.scrolled { border-bottom-color:var(--border); }
       <h1 class="section-heading">Not advisors. Buyers.</h1>
       <p class="section-sub">Our mentors sit on the other side of the table. They know exactly what kills a deal because they've walked away from hundreds of them.</p>
     </div>
-    <div class="g4 reveal" style="margin-top:3rem;">
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem;margin-top:3rem;" class="reveal mentor-grid">
       <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Christian.png" alt="Christian Walter" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Christian Walter</div><div class="mentor-role">CEO, RegionRise<br>Ex-Google Europe</div></div>
-      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Wilson.png" alt="Wilson Khoo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Wilson Khoo</div><div class="mentor-role">International Sales<br>Cross-border Strategy</div></div>
-      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Pascal.png" alt="Pascal Viaud" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Pascal Viaud</div><div class="mentor-role">European Market Entry<br>Negotiation Strategy</div></div>
+      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Wilson.png" alt="Wilson Khoo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Wilson Khoo</div><div class="mentor-role">Director, co-pace APAC<br>Continental AG</div></div>
+      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Pascal.png" alt="Pascal Viaud" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Pascal Viaud</div><div class="mentor-role">CEO, UBIK ltd.<br>La French Tech Taiwan</div></div>
       <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Chander%20Kant.png" alt="Chander Kant" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Chander Kant</div><div class="mentor-role">CEO, K Ventures<br>Former CEO, Zmanda</div></div>
-      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Mark%20Birch.png" alt="Mark Birch" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Mark Birch</div><div class="mentor-role">Community & BD<br>Enterprise Sales</div></div>
-    </div>
+      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Mark%20Birch.png" alt="Mark Birch" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Mark Birch</div><div class="mentor-role">Founder, TribeROI<br>Ex-AWS Global Advocate</div></div>
       <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Ashley.png" alt="Ashley Hsueh" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Ashley Hsueh</div><div class="mentor-role">Management Consultant<br>Bain & Company</div></div>
       <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Volker%20Kaese_0.jpg" alt="Dr. Volker Kaese" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Dr. Volker Kaese</div><div class="mentor-role">CEO, Ingenev Mobility<br>Ex-Audi/VW Innovation</div></div>
       <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/deborah.jpg" alt="Deborah Magid" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Deborah Magid</div><div class="mentor-role">MD, NextStar Ventures<br>Ex-IBM Ventures</div></div>
-      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Shafeen.png" alt="Shafeen Charania" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Shafeen Charania</div><div class="mentor-role">COO, fluency<br>Enterprise IT Strategy</div></div>
+      <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Shafeen.png" alt="Shafeen Charania" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Shafeen Charania</div><div class="mentor-role">COO, fluency<br>Ex-DXC Enterprise IT</div></div>
       <div class="mentor-card"><div class="mentor-photo"><img src="https://raw.githubusercontent.com/sungmbh/Training_2026/main/Todd%20Lin_0.png" alt="Todd Lin" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="mentor-name">Todd Lin</div><div class="mentor-role">Mentor<br>International Business</div></div>
+    </div>
     
     
   </div>
